@@ -10,7 +10,7 @@ $(document).ready(function(){
     employees.push(dict);
     let details=employees[0];
     let divnode=$("<div class=\"employeeTiles\"></div>");
-    divnode.append(["<pre class=\"nameTitle\">"," ",details["PrefferedName"],"</pre>"].join(''));
+    divnode.append(["<pre class=\"nameTitle\">",details["PrefferedName"],"</pre>"].join(''));
     divnode.append(["<pre>",details["JobTitle"],"<br>",details["Office"],"</pre>"].join(''));
     let divnodeicons=$("<div class=\"iconsBar\"></div>");
     divnodeicons.append(["<img class=\"icons\" src=emialicon.jpg>","</img>","<img class=\"icons\" src=staricon.png>","</img>","<img class=\"icons\" src=favicon.png>","</img>"].join(''));

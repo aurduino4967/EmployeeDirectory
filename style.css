@@ -382,7 +382,7 @@ ul{
 
 .iconsBar
 {
-    margin-left
+    margin-left:auto;
     align-self: center;
     align-items: center;
     margin-top: 0px;
