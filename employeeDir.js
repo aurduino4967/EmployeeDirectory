@@ -3,10 +3,10 @@ $(document).ready(function(){
     
     //showing a sample employee in results-section  
     let dict={};
-    dict["PrefferedName"] ="   Sandeep Bhaskar";
-    dict["Email"] =  "   Sandeep@gmail.com";
-    dict["JobTitle"] = "   Full Stack Dev";
-    dict["Office"] = "   India";
+    dict["PrefferedName"] ="Sandeep Bhaskar";
+    dict["Email"] =  "Sandeep@gmail.com";
+    dict["JobTitle"] = "Full Stack Dev";
+    dict["Office"] = "India";
     employees.push(dict);
     let details=employees[0];
     let divnode=$("<div class=\"employeeTiles\"></div>");
