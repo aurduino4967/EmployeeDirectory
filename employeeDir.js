@@ -8,14 +8,7 @@ $(document).ready(function(){
     dict["JobTitle"] = "Full Stack Dev";
     dict["Office"] = "India";
     employees.push(dict);
-    let details=employees[0];
-    let divnode=$("<div class=\"employeeTiles\"></div>");
-    divnode.append(["<pre class=\"nameTitle\">",details["PrefferedName"],"</pre>"].join(''));
-    divnode.append(["<pre>",details["JobTitle"],"<br>",details["Office"],"</pre>"].join(''));
-    let divnodeicons=$("<div class=\"iconsBar\"></div>");
-    divnodeicons.append(["<img class=\"icons\" src=emialicon.jpg>","</img>","<img class=\"icons\" src=staricon.png>","</img>","<img class=\"icons\" src=favicon.png>","</img>"].join(''));
-    divnode.append(divnodeicons);
-    $(".results-section").append(divnode);
+    addToResults(employees[0]);
     
     //creating alpha search buttons
     for(let i=0;i<26;i++)
@@ -60,20 +53,27 @@ $(document).ready(function(){
         $(".results-section").empty();
         for(let i=0;i<employees.length;i++)
             {
-                let details=employees[i];
-                let divnode1=$("<div class=\"employeeTiles\"></div>");
-                divnode1.append(["<pre class=\"nameTitle\">",details["PrefferedName"],"</pre>"].join(''));
-                divnode1.append(["<pre>",details["JobTitle"],"<br>",details["Office"],"</pre>"].join(''));
-                let divnode2=$("<div class=\"iconBar\"></div>");
-                divnode2.append(["<img class=\"icons\" src=emialicon.jpg>","</img>","<img class=\"icons\" src=favicon.png>","</img>"].join(''));
-                divnode1.append(divnode2);
-                $(".results-section").append(divnode1);
+                addToResults(employees[i]);
             }
     });
 
     $(".Clear").click(function(){
         $("#inputKeyword").val("");
     });
+    
+    function addToResults(details)
+    {
+        let divnode=$("<div class=\"employeeTiles\"></div>");
+        divnode.append(["<img class=\"idicon\" src=usericon2.jpg>","</img>"].join(''));
+        let divnodeid=$("<div class=\"id-section\"></div>");
+        divnodeid.append(["<pre class=\"nameTitle\">",details["PrefferedName"],"</pre>"].join(''));
+        divnodeid.append(["<pre>",details["JobTitle"],"<br>",details["Office"],"</pre>"].join(''));
+        let divnodeicons=$("<div class=\"iconsBar\"></div>");
+        divnodeicons.append(["<img class=\"icons\" src=emialicon.jpg>","</img>","<img class=\"icons\" src=staricon.png>","</img>","<img class=\"icons\" src=favicon.png>","</img>"].join(''));
+        divnode.append(divnodeid);
+        divnode.append(divnodeicons);
+        $(".results-section").append(divnode);
+    }
     
 })
 
