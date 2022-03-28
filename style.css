@@ -259,8 +259,7 @@ table
 .employeeTiles
 {
     background-color: lightgray;
-    text-align: left;
-    justify-content: center;
+    align-items:safe center;
     width: 200px;
     height: 90px;
     float:left;
