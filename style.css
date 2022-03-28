@@ -1,0 +1,391 @@
+body{
+    margin: 0px;
+}
+.header-section
+{
+    height: 15%;
+    width:100%;
+    float: left;
+    align-items: baseline;
+    border-bottom-style:solid;
+    border-color: lightgray;
+    border-width: 2px;
+}
+
+.headerElements
+{
+    width:fit-content;
+    height:fit-content;
+    float:left;
+    margin-left: 20px;
+}
+
+.departmentsAndTitles-section
+{
+    padding-left:30px;
+    height: 90%;
+    width: 17%;
+    float: left;
+}
+
+.search-section
+{
+    height: 22%;
+    width: 78.5%;
+    float: left;
+    padding-left:0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    padding-top:10px;
+        
+}
+
+.userIcon{
+    object-fit:contain;
+    float:inherit;
+    height:35px;
+    width:35px;
+    margin:0px;
+    padding-top: 2px;
+    margin-left: 0px;
+    border-radius: 10px;
+}
+
+.results-section
+{
+    height: 58%;
+    width: 78%;
+    float: left;
+    padding:5px;
+    margin-left: inherit;
+    border:2px;
+    margin-top:8px;
+    border-style: solid;
+    border-color:gainsboro;
+    margin-left:20px;
+}
+
+.pageTitle{
+    color: deepskyblue;
+    font-family: monospace;
+    font-weight: 100;
+    font-size: 34px;
+    margin:0px;
+    margin-top:30px;
+}
+
+.departments
+{
+    font-family: monospace;
+    font-size: 18px;
+    font-weight:inherit;
+    padding: 10px;
+    width: 100%;
+    height: 18%;
+    float: left;
+    font-weight: bold;
+}
+
+.offices
+{
+    font-family: monospace;
+    font-size: 18px;
+    font-weight:inherit;
+    padding: 10px;
+    width: 100%;
+    height: 13%;
+    float: left;
+    font-weight: bold;
+}
+
+.jobTitles
+{
+    font-family: monospace;
+    font-size: 18px;
+    font-weight:inherit;
+    padding: 10px;
+    width: 100%;
+    height: 20%;
+    float: left;
+    font-weight: bold;
+}
+
+#addEmployeeFormContainer
+{
+    position:absolute;
+    margin-top:280px;
+	margin-left:700px; 
+    width: 25%;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    border-color: black;
+    float:left;
+    justify-content: flex-start;
+    align-items:flex-start;
+    background-color: skyblue;
+}
+
+.addEmployeeBtnContainer
+{
+    float:left;
+    margin-left: 30px;
+}
+
+.inputs
+{
+    border-color:gainsboro;
+    border-radius: 5px;
+    border-width: medium;
+    border-style:solid;
+    padding-top:10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.formElements
+{
+    margin:30px;
+}
+td
+{
+  margin-top:20px;
+  
+}
+table
+{
+    align-content: center;
+    margin-left: 20px;
+    margin-top:8px;
+}
+
+#close
+{
+   position: absolute;
+    top:0px;
+    right:0px;
+    width:25px;
+    height: 25px;
+    height: 25px;
+}
+
+.labels{
+    font-family: monospace;
+    color:gray;
+    font-weight: 800;
+    font-size:16px;
+    margin-left: 0px;
+}
+
+.alphaboxes
+{
+    border-radius: 5px;
+    margin-left: 5px;
+    background-color:deepskyblue;
+    border-color: white; 
+    font-weight: bold;
+    color: white;
+    height: 40px;
+    width: 35px;
+}
+
+.searchAlphabets
+{
+    padding-left: 10px;
+    padding-bottom: 40px;
+    margin-left: 40px;
+    margin-top:10px;
+    float: left;
+    width: 100%;
+    align-content: center;    
+}
+
+.searchBar
+{
+    float: left;
+    margin-left:80px;
+    border-radius: 10px;
+    
+}
+
+.clear
+{
+    margin-left: 25px;
+    margin-right: 20px;
+    padding:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: limegreen;
+    border-radius: 5px;
+    border-width: 0px;
+    font-size:16px;
+    color: white;
+}
+
+#show
+{
+    margin-left: 50px;
+    border-radius: 5px;
+    padding:10px;
+    color:white;
+    border-width: 0px;
+    font-weight: bolder;
+    background-color: deepskyblue;
+}
+
+.filter
+{
+    border-color:gainsboro;
+    border-radius: 5px;
+    border-width: medium;
+    border-style:solid;
+    padding:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+
+#showEmp{
+	float:left;
+    margin-left:20px;
+    border-radius: 5px;
+    padding:10px;
+    color:white;
+    border-width: 0px;
+    background-color: coral;
+}
+
+.employeeTiles
+{
+    background-color: lightgray;
+    text-align: left;
+    justify-content: center;
+    width: 200px;
+    height: 90px;
+    float:left;
+    margin:2px;
+    padding:5px;
+    padding-top: 8px;
+    border-radius: 5px;
+}
+
+pre{
+    margin-left:6px;
+    margin-top:0px;
+    padding-top: 0px;
+    border-top:0px;
+    font-size: 13px;
+    float: none;
+    font-family: sans-serif;
+    color:grey;
+}
+
+.submitbtn{
+    margin-left: 250px; 
+    padding:7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-width: 0px;
+    color:white;
+    border-radius: 5px;
+    background-color:limegreen;
+}
+
+.headerImg{
+    margin-left:40px;
+    margin-top:30px;
+    
+}
+h5{
+    margin:0px;
+    margin-top:5px;
+    font-size: 15px;
+    font-family: monospace;
+    font-weight:300;
+}
+
+.filterBy
+{
+    font-family: monospace;
+    color:gray;
+    font-weight: 800;
+    font-size:16px;
+    margin-left: 10px;
+    
+}
+
+.note span{
+    font-family: monospace;
+    font-weight: bold;
+    margin-left: 80px;
+    float:left;
+    margin-right: 3px;
+    
+}
+.note{
+    font-family: monospace;
+    margin-top: 5px;
+    float:left;
+}
+
+.info{
+    font-family:sans-serif;
+    font-weight:normal;
+    font-size:15px;
+    margin-left: 0px;
+    padding-top:3px;
+    color:gray;
+
+}
+ul{
+    list-style: none;
+    margin-top:5px;
+    padding-left: 6px;
+}
+
+#viewMore{
+    color:deepskyblue;
+    background-color: white;
+    border:0px;
+}
+
+#welcome{
+    font-family:sans-serif;
+    font-weight:lighter;
+    margin-left:600px;
+    margin-top:50px;
+    font-size:20px;
+}
+
+#welcome span{
+    margin-right: 5px;
+    color:deepskyblue;
+    padding-top:50px;
+}
+
+.nameTitle{
+    color:black;
+    font-weight: bold;
+    font-size:15px;
+    margin-bottom: 5px;
+    margin-left:0px;
+    padding-left: 0px;
+}
+
+.icons
+{
+    height: 20px;
+    width:20px;
+    object-fit: contain;
+    margin-left: 10px;
+}
+
+.iconsBar
+{
+    margin-left
+    align-self: center;
+    align-items: center;
+    margin-top: 0px;
+    padding-top: 0px;
+}
