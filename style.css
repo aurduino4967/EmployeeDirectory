@@ -210,7 +210,7 @@ table
     color: white;
 }
 
-#show
+#addEmpBtn
 {
     margin-left: 280px;
     padding:10px;
@@ -381,17 +381,7 @@ ul{
     float:left;
 }
 
-.edit{
-    margin-top:0px;
-    padding-top: 0px;
-    margin-left: 45px;
-    border:0px;
-    color:blue;
-    background-color: lightgray;
-    
-}
-
-#saveBtn{
+#updateBtn{
     margin-left: 20px;
 }
 

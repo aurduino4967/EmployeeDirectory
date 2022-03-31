@@ -6,7 +6,7 @@ $(document).ready(function(){
     //function to add details to result section
     function addToResults(details,id)
     {
-        let divnode=$("<div class=\"employeeTiles\"></div>");
+        let divnode=$(["<div class=\"employeeTiles\" ","id=\"",id,"\"","></div>"].join(''));
         divnode.append(["<img class=\"idicon\" src=usericon2.jpg>","</img>"].join(''));
         let divnodeid=$("<div class=\"id-section\"></div>");
         divnodeid.append(["<pre class=\"nameTitle\">",details["PrefferedName"],"</pre>"].join(''));
@@ -15,7 +15,7 @@ $(document).ready(function(){
         divnodeicons.append(["<img class=\"icons\" src=emialicon.jpg>",
                              "<img class=\"icons\" src=staricon.png>",
                              "<img class=\"icons\" src=favicon.png>"
-                             ,"<button class=\"edit\" ","value=\"",id,"\"",">edit</button>"].join(''));
+                            ].join(''));
         divnode.append(divnodeid);
         divnode.append(divnodeicons);
         $(".results-section").append(divnode);
@@ -100,8 +100,8 @@ $(document).ready(function(){
 	});
 	
     //Add Employee button functionality
-    $(document).on("click","#show",function(){
-        $("#saveBtn").hide();
+    $(document).on("click","#addEmpBtn",function(){
+        $("#updateBtn").hide();
         $("#submit").show();
         $("#addEmployeeFormContainer").show();    
 
@@ -113,16 +113,16 @@ $(document).ready(function(){
     }); 
     
     //edit button functionality 
-    $(document).on("click",".edit",function(){
+    $(document).on("click",".employeeTiles",function(){
         $("#submit").hide();
-        $("#saveBtn").show();
+        $("#updateBtn").show();
         $("#addEmployeeFormContainer").show();
-        setForm($(this).val());
-        delete employees[$(this).val()];
+        setForm(this.id);
+        delete employees[this.id];
     });   
   
     //To edit employee details
-    $(document).on("click","#saveBtn",function(e){
+    $(document).on("click","#updateBtn",function(e){
         $("#addEmployeeFormContainer").hide();
         dict=createEmpDict();
         employees[dict["Email"]]=dict;
