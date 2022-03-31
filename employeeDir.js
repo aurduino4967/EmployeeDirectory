@@ -19,7 +19,22 @@ $(document).ready(function(){
         divnode.append(divnodeid);
         divnode.append(divnodeicons);
         $(".results-section").append(divnode);
-    }  
+    }
+    
+    //set form details
+    function setForm(empid)
+    {
+        dict=employees[empid];
+        $("[name='EmpFirstName']").val(dict["FirstName"]);
+        $("[name='EmpLastName']").val(dict["LastName"]);
+        $("[name='EmpPrefferedName']").val(dict["PrefferedName"]);
+        $("[name='EmpEmail']").val(dict["Email"]);
+        $("[name='EmpJobTitle']").val(dict["JobTitle"]);
+        $("[name='EmpOffice']").val(dict["Office"]);
+        $("[name='EmpDept']").val(dict["Department"]);
+        $("[name='EmpPh']").val(dict["Phone"]);
+        $("[name='EmpSkypeId']").val(dict["SkypeId"]);        
+    }
     
     //function to create employeedictionary
     function createEmpDict()
@@ -101,9 +116,9 @@ $(document).ready(function(){
     $(document).on("click",".edit",function(){
         $("#submit").hide();
         $("#saveBtn").show();
-        delete employees[$(this).val()];
         $("#addEmployeeFormContainer").show();
-        $("#Email").val($(this).val());
+        setForm($(this).val());
+        delete employees[$(this).val()];
     });   
   
     //To edit employee details
