@@ -113,11 +113,10 @@ body{
 #addEmployeeFormContainer
 {
     position:absolute;
-    margin-top:280px;
+    margin-top:230px;
 	margin-left:700px; 
     width: 25%;
     padding: 10px;
-    border-radius: 5px;
     display: none;
     border-color: black;
     float:left;
@@ -140,7 +139,7 @@ body{
     border-style:solid;
     padding-top:10px;
     padding-bottom: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
     position: relative;
 }
 
@@ -160,16 +159,6 @@ table
     margin-top:8px;
 }
 
-#close
-{
-   position: absolute;
-    top:0px;
-    right:0px;
-    width:25px;
-    height: 25px;
-    height: 25px;
-}
-
 .labels{
     font-family: monospace;
     color:gray;
@@ -180,14 +169,13 @@ table
 
 .alphaboxes
 {
-    border-radius: 5px;
-    margin-left: 5px;
+    margin-left: 2px;
     background-color:deepskyblue;
     border-color: white; 
     font-weight: bold;
     color: white;
     height: 40px;
-    width: 35px;
+    width: 40px;
 }
 
 .searchAlphabets
@@ -204,7 +192,7 @@ table
 .searchBar
 {
     float: left;
-    margin-left:80px;
+    margin-left:60px;
     border-radius: 10px;
     
 }
@@ -216,8 +204,7 @@ table
     padding:10px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: limegreen;
-    border-radius: 5px;
+    background-color:limegreen;
     border-width: 0px;
     font-size:16px;
     color: white;
@@ -225,8 +212,7 @@ table
 
 #show
 {
-    margin-left: 50px;
-    border-radius: 5px;
+    margin-left: 280px;
     padding:10px;
     color:white;
     border-width: 0px;
@@ -234,26 +220,18 @@ table
     background-color: deepskyblue;
 }
 
-.filter
+#filter
 {
     border-color:gainsboro;
     border-radius: 5px;
+    color:grey;
     border-width: medium;
     border-style:solid;
     padding:10px;
+    margin-left:10px;
     padding-left: 30px;
     padding-right: 30px;
     
-}
-
-#showEmp{
-	float:left;
-    margin-left:20px;
-    border-radius: 5px;
-    padding:10px;
-    color:white;
-    border-width: 0px;
-    background-color: coral;
 }
 
 .employeeTiles
@@ -266,7 +244,6 @@ table
     margin:2px;
     padding:5px;
     padding-top: 8px;
-    border-radius: 5px;
 }
 
 pre{
@@ -281,6 +258,7 @@ pre{
 }
 
 .submitbtn{
+    display: none;
     margin-left: 250px; 
     padding:7px;
     padding-left: 10px;
@@ -317,7 +295,7 @@ h5{
 .note span{
     font-family: monospace;
     font-weight: bold;
-    margin-left: 80px;
+    margin-left: 60px;
     float:left;
     margin-right: 3px;
     
@@ -401,4 +379,22 @@ ul{
     height: fit-content;
     width:75%;
     float:left;
+}
+
+.edit{
+    margin-top:0px;
+    padding-top: 0px;
+    margin-left: 45px;
+    border:0px;
+    color:blue;
+    background-color: lightgray;
+    
+}
+
+#saveBtn{
+    margin-left: 20px;
+}
+
+#inputKeyword{
+    font-family:Arial,FontAwesome;
 }

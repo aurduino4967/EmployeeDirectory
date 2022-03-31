@@ -1,12 +1,12 @@
 <!DOCTYPE>
 
 <html>
-	
     <head>
         <link rel="stylesheet" href="style.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
         <title>Employee Directory</title>
         <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="employeeDir.js"></script>
 		
     </head>
@@ -14,7 +14,6 @@
     <body>
 		
 		<div id="addEmployeeFormContainer">
-                <img id="close" src="close.png" >
                 <table>
                     <form id="addEmployeeForm">
                                 <tr class="formElements">
@@ -31,7 +30,7 @@
                                 </tr>
                                 <tr class="formElements">
                                     <td><label class="labels">Email</label></td>
-                                    <td><input class="inputs" type=email name="EmpEmail" required></td>
+                                    <td><input class="inputs" type=email name="EmpEmail" required id="Email"></td>
                                 </tr>
                                 <tr class="formElements">
                                     <td><label class="labels">JobTitle</label></td>
@@ -54,7 +53,8 @@
                                     <td><input class="inputs" type=text name="EmpSkypeId"></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" ><input class="submitbtn" type="submit"></td>
+                                    <td colspan="2" ><button class="submitbtn" id="submit">submit</button>
+                                    <button class="submitbtn" id="saveBtn">savechanges</button></td>
                                 </tr>
                      </form>
                 </table>
@@ -68,7 +68,7 @@
                 <h5>The Ultimate People Directory Experience</h5>
             </div>
             <div id="welcome" class="headerElements">
-                <h4><span>Welcome,</span>Sandeep Bhaskar</h4>    
+                <h4><span>Welcome,</span>Hemanth Kumar</h4>    
             </div>
         </div>
         <div class="departmentsAndTitles-section">
@@ -105,24 +105,19 @@
             </div>
             <div class="searchBar">
                             <label class="labels">Search</label>
-                            <input class="inputs" id="inputKeyword" type=text name="EmpFirstName" size="25" plaFeholder="Enter any Keyword">
+                            <input class="inputs" id="inputKeyword" type="text" placeholder="&#xF002; Enter any keyword" size="25" />
                             <button class="Clear" >Clear</button>
-                            <label class="filterBY" for="filter">Filter By:</label>
-                            <select name="filter" class="Filter" >
-                              <option value="PrefferedName">PrefferedName</option>
-                              <option value="All">All</option>
-                              <option value="Dept">Department</option>
-                              <option value="JobTitle">JobTitles</option>
+                            <label class="filterBy" for="filter">Filter by</label>
+                            <select name="filter" id="Filter">
+                              <option value="PrefferedName">Preffered Name</option>
+                              <option value="Department">Department</option>
+                              <option value="JobTitle">Job Title</option>
                               <option value="Office">Office</option>
                             </select>
             </div>
             <div class="addEmployeeBtnContainer">
-            <button id="show">AddEmployee</button>
+            <button id="show">Add Employee</button>
 			</div>
-            
-			<div>
-				<button id="showEmp">ShowEmployees</button>
-            </div>
             <div class="note">
                 <span>Note:</span><text>Please use the advanced filters to refine filtering</text>
             </div>
