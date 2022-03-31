@@ -74,6 +74,29 @@ $(document).ready(function(){
             }
         }
     }
+    
+    //validating form
+    function validateForm()
+    {
+        if($("input[name=EmpPrefferedName]").val()==""){
+            alert("fill preffered name");
+            return false;
+        }
+        if($("input[name=EmpEmail]").val()==""){
+            alert("fill Email");
+            return false;
+        }        
+        if($("input[name=EmpJobTitle]").val()==""){
+            alert("fill JobTitle");
+            return false;
+        }        
+        if($("input[name=EmpOffice]").val()==""){
+            alert("fill Office");
+            return false;
+        }        
+        return true;
+
+    }
   
     //for generating alphabetic input buttons
     for(let i=0;i<26;i++)
@@ -90,13 +113,16 @@ $(document).ready(function(){
     
     //form submit button functionality
 	$(document).on('click','#submit',function(){
-		let dict={};
-        $("#addEmployeeFormContainer").hide();
-		dict=createEmpDict();
-		employees[dict["Email"]]=dict;
-        $("#addEmployeeForm").trigger("reset");
-        addToResults(dict,dict["Email"]);
-        alert("Employee Added Successfully");
+        if(validateForm())
+        {
+            let dict={};
+            $("#addEmployeeFormContainer").hide();
+            dict=createEmpDict();
+            employees[dict["Email"]]=dict;
+            $("#addEmployeeForm").trigger("reset");
+            addToResults(dict,dict["Email"]);
+            alert("Employee Added Successfully");
+        }
 	});
 	
     //Add Employee button functionality
@@ -104,7 +130,6 @@ $(document).ready(function(){
         $("#updateBtn").hide();
         $("#submit").show();
         $("#addEmployeeFormContainer").show();    
-
     });
     
     //clear button functionality
@@ -123,14 +148,16 @@ $(document).ready(function(){
   
     //To edit employee details
     $(document).on("click","#updateBtn",function(e){
+        if(validateForm()){
         $("#addEmployeeFormContainer").hide();
         dict=createEmpDict();
         employees[dict["Email"]]=dict;
         $("#addEmployeeForm").trigger("reset");
         $(".results-section").empty();
-        alert("Changes Saved");
+        alert("Updated Details Successfully");
         for ([empid, details] of Object.entries(employees)) {
             addToResults(details,empid);
+            }
         }
     });   
     
