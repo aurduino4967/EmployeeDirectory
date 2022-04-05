@@ -115,6 +115,7 @@ body{
     position:absolute;
     margin-top:230px;
 	margin-left:700px; 
+    border-radius: 15px;
     width: 25%;
     padding: 10px;
     display: none;
@@ -387,4 +388,14 @@ ul{
 
 #inputKeyword{
     font-family:Arial,FontAwesome;
+}
+
+#close
+{
+   position: absolute;
+    top:0px;
+    right:0px;
+    width:25px;
+    height: 25px;
+    height: 25px;
 }

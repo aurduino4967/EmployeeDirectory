@@ -55,11 +55,11 @@ $(document).ready(function(){
     //function to apply filters
     function filterby()
     {
-        var filter=$("#Filter").val();
         var startword=$("#inputKeyword").val().toLowerCase();
+        var filter=$("#Filter").val();
         $(".results-section").empty();
         if(startword!="")
-            {
+        {
                 for ([empid,details] of Object.entries(employees)) {
                         if(details[filter].toLowerCase().startsWith(startword))
                                 addToResults(details,empid);
@@ -69,8 +69,6 @@ $(document).ready(function(){
         {
             for ([empid,details] of Object.entries(employees)) {
                         addToResults(details,empid);
-
-            
             }
         }
     }
@@ -78,41 +76,58 @@ $(document).ready(function(){
     //validating form
     function validateForm()
     {
+        var errorMsg="";
         if($("input[name=EmpPrefferedName]").val()==""){
-            alert("fill preffered name");
-            return false;
+            errorMsg=errorMsg.concat("fill preffered name\n");
         }
         if($("input[name=EmpEmail]").val()==""){
-            alert("fill Email");
-            return false;
+            errorMsg=errorMsg.concat("fill Email\n");
         }        
         if($("input[name=EmpJobTitle]").val()==""){
-            alert("fill JobTitle");
-            return false;
+            errorMsg=errorMsg.concat("fill JobTitle\n");
         }        
         if($("input[name=EmpOffice]").val()==""){
-            alert("fill Office");
+            errorMsg=errorMsg.concat("fill Office\n");
+        }
+        if($("input[name=EmpDept]").val()==""){
+            errorMsg=errorMsg.concat("fill Department\n");
+        }
+        if(errorMsg.length>0){
+            alert(errorMsg);
             return false;
-        }        
-        return true;
+        }
+        else
+        {
+            return true;
+        }
 
     }
   
-    //for generating alphabetic input buttons
-    for(let i=0;i<26;i++)
+    //function for generating alphabetic input buttons
+    function generateAlphaBoxes()
     {
-        chr=String.fromCharCode(65 + i);
-        $(".SearchAlphabets").append(["<button class=\"alphaboxes\" value=",chr,">",chr,"</button>"].join(''));
+        for(let i=0;i<26;i++)
+        {
+            chr=String.fromCharCode(65 + i);
+            $(".SearchAlphabets").append(["<button class=\"alphaboxes\" value=",chr,">",chr,"</button>"].join(''));
+        }
     }
+    
+    //generate alpha boxes
+    generateAlphaBoxes();
     
     //for generating alphabetic input 
     $(document).on("click",".alphaboxes",function(){
-        $("#inputKeyword").val($("#inputKeyword").val()+$(this).val());
-            
+        $(".results-section").empty();
+        var filter=$("#Filter").val();
+        for ([empid,details] of Object.entries(employees)) {
+                if(details[filter].toLowerCase().startsWith($(this).val().toLowerCase()))
+                        addToResults(details,empid);
+        }    
     });
     
     //form submit button functionality
-	$(document).on('click','#submit',function(){
+	$(document).on('click','#submit',function(e){
         if(validateForm())
         {
             let dict={};
@@ -123,7 +138,8 @@ $(document).ready(function(){
             addToResults(dict,dict["Email"]);
             alert("Employee Added Successfully");
         }
-	});
+        return false;
+    });
 	
     //Add Employee button functionality
     $(document).on("click","#addEmpBtn",function(){
@@ -134,8 +150,19 @@ $(document).ready(function(){
     
     //clear button functionality
     $(document).on("click",".Clear",function(){
+        $(".results-section").empty();
         $("#inputKeyword").val("");
+        for ([empid, details] of Object.entries(employees)) {
+            addToResults(details,empid);
+            }
+        
     }); 
+    
+    //for close button
+    $("#close").click(function(){
+        $("#addEmployeeForm").trigger('reset');
+        $("#addEmployeeFormContainer").hide();
+    });
     
     //edit button functionality 
     $(document).on("click",".employeeTiles",function(){
@@ -159,13 +186,14 @@ $(document).ready(function(){
             addToResults(details,empid);
             }
         }
+        e.preventDefault();
     });   
     
     //for generating response when filter option is changed 
     document.getElementById('Filter').addEventListener("change", filterby);
     
     //for generating response when inputKeyword is given
-    document.getElementById('inputKeyword').addEventListener("change", filterby);
+    document.getElementById('inputKeyword').addEventListener("keyup", filterby);
    
 })
          
